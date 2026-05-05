@@ -55,7 +55,7 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
             Manifest
           </a>
           <a
-            href="https://github.com/crafter-station/petdex"
+            href="https://github.com/your-handle/homiedex"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 transition hover:text-black"
@@ -119,7 +119,7 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
               Manifest
             </MobileLink>
             <a
-              href="https://github.com/crafter-station/petdex"
+              href="https://github.com/your-handle/homiedex"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 rounded-2xl px-4 py-3 transition hover:bg-white"
@@ -129,7 +129,7 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
               GitHub
             </a>
             <a
-              href="https://github.com/sponsors/Railly"
+              href="https://github.com/sponsors/your-handle"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 rounded-2xl px-4 py-3 text-rose-700 transition hover:bg-rose-50"

@@ -6,19 +6,19 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getApprovedPetCount } from "@/lib/pets";
 
-const SITE_URL = "https://petdex.crafter.run";
+const SITE_URL = "https://homiedex.example.com";
 
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "About Petdex — Animated pet companions for the Codex CLI",
+  title: "About Homiedex — Black & African American pop culture pixel pets",
   description:
-    "Petdex is an open-source gallery of animated pixel pets for the OpenAI Codex CLI. Browse the catalog, install with one command, or submit your own.",
+    "Homiedex is the codex of Black & African American pop culture as tiny animated pixel pets. Browse legends from music, film, sports, comedy, and history.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Petdex",
+    title: "About Homiedex",
     description:
-      "An open-source gallery of animated pixel pets for the OpenAI Codex CLI.",
+      "The Black & African American pop culture codex of pixel pets.",
     url: `${SITE_URL}/about`,
     type: "website",
   },
@@ -26,32 +26,32 @@ export const metadata = {
 
 const FAQ: { q: string; a: string }[] = [
   {
-    q: "What is a Codex pet?",
-    a: "A Codex pet is a small animated pixel companion that lives inside the Codex CLI. Each pet ships as a single pet.json describing 9 states (idle, working, sleeping, etc.) plus a horizontal spritesheet. Codex picks the right state automatically based on what you're doing in the terminal.",
+    q: "What is Homiedex?",
+    a: "Homiedex is a codex of Black & African American pop culture icons — musicians, athletes, actors, comedians, civil rights figures, writers — reimagined as tiny animated pixel pets. Each entry is a small spritesheet with 9 states (idle, working, sleeping, etc.) that can live in the Codex CLI or anywhere else you want a chibi homie cheering you on.",
   },
   {
     q: "How do I install a pet?",
-    a: "From the gallery page or any pet detail page, copy the install command (looks like `npx petdex install boba`) and paste it into your terminal. The CLI fetches the pet from R2, drops it under ~/.codex/pets/<slug>/, and tells Codex to use it. Works on macOS, Linux, and Windows (via PowerShell).",
+    a: "From the gallery page or any pet detail page, copy the install command (looks like `npx petdex install biggie`) and paste it into your terminal. The CLI drops the pet under ~/.codex/pets/<slug>/ and tells Codex to use it. Works on macOS, Linux, and Windows (via PowerShell).",
   },
   {
     q: "Where do the pets come from?",
-    a: "Most pets are submitted by the community through the website or the petdex CLI. A handful are featured curated entries hand-picked from Crafter Station. Every pet is reviewed by an admin before it goes live in the gallery.",
+    a: "Curated by the Homiedex team and the community. The featured set covers a broad sweep — Biggie, Prince, Bey, T'Challa, Ali, MLK — and the catalog grows as new homies get pixel-arted and submitted.",
   },
   {
     q: "Can I submit my own pet?",
-    a: "Yes. Sign in with the petdex CLI (npx petdex login) and run `npx petdex submit ./my-pet/` — the CLI uploads the assets to R2 and queues the submission for review. You can also submit through the website at /submit. All you need is a pet.json file and a 9-state spritesheet.",
+    a: "Yes. Sign in and run `npx petdex submit ./my-pet/` — the CLI queues your submission for review. You can also submit through the website at /submit. All you need is a pet.json file and a 9-state spritesheet.",
   },
   {
-    q: "Are Petdex pets free and open source?",
-    a: "Every pet on Petdex is free to install and use. Pets keep credit to their original authors. The Petdex platform itself (CLI + site) is open source under the Crafter Station umbrella.",
+    q: "Is Homiedex free and open source?",
+    a: "Every pet is free to install and use. Pets credit their original artists. The Homiedex site itself is open source.",
   },
   {
     q: "What's a vibe? What's a kind?",
-    a: "Each pet is tagged with a kind (creature, object, character) and one to three vibes (cozy, playful, focused, mystical, …). These power the gallery filters and the per-vibe / per-kind landing pages so you can find a companion that matches your mood without scrolling 70+ entries.",
+    a: "Each pet is tagged with a kind (musician, athlete, character, …) and a few vibes (cozy, playful, focused, mystical, …). These power the gallery filters and per-vibe / per-kind landing pages so you can find the right homie without scrolling.",
   },
   {
-    q: "How does Petdex make money?",
-    a: "It doesn't. Petdex is a community project run by Crafter Station. Storage and DB are absorbed by the platform team — no ads, no upsells, no telemetry beyond standard analytics on which pets get installed.",
+    q: "How does Homiedex make money?",
+    a: "It doesn't. It's a labor-of-love project. No ads, no upsells, no telemetry beyond basic analytics on which pets get installed.",
   },
 ];
 
@@ -62,10 +62,10 @@ export default async function AboutPage() {
     {
       "@context": "https://schema.org",
       "@type": "AboutPage",
-      name: "About Petdex",
+      name: "About Homiedex",
       url: `${SITE_URL}/about`,
       description:
-        "Petdex is an open-source gallery of animated pixel pets for the OpenAI Codex CLI.",
+        "Homiedex is the Black & African American pop culture codex of pixel pets.",
       isPartOf: { "@type": "WebSite", "@id": `${SITE_URL}/#website` },
     },
     {
@@ -93,15 +93,15 @@ export default async function AboutPage() {
               About
             </p>
             <h1 className="mt-3 text-balance text-[40px] leading-[1] font-semibold tracking-tight md:text-[64px]">
-              Petdex is the index of Codex pets
+              Homiedex is the codex of Black homies
             </h1>
             <p className="mt-5 max-w-2xl text-balance text-base leading-7 text-[#202127] md:text-lg">
-              An open-source gallery of {totalPets}+ animated pixel companions
-              for the <strong>Codex CLI</strong>. Install one with a single
-              command, animate your terminal, and ship code with company.
+              {totalPets}+ Black & African American pop culture legends as tiny
+              animated pixel pets. Install one with a single command, post one
+              up in your terminal, and ship code with the GOATs.
             </p>
             <CommandLine
-              command="npx petdex install boba"
+              command="npx petdex install biggie"
               source="about-hero"
               className="mt-5 w-full max-w-sm"
             />
@@ -112,30 +112,29 @@ export default async function AboutPage() {
       <section className="mx-auto flex w-full max-w-3xl flex-col gap-12 px-5 py-14 md:px-8 md:py-20">
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight text-stone-950 md:text-3xl">
-            What Petdex is
+            What Homiedex is
           </h2>
           <p className="text-base leading-7 text-stone-700 md:text-lg">
-            Petdex is a public, open-source registry. Every entry is a pet
-            pack — a tiny bundle of metadata and pixel art that the Codex CLI
-            knows how to display while you work. Think of it as a Pokédex for
-            terminal companions.
+            Homiedex is a public, open-source codex. Every entry is a homie pack
+            — a tiny bundle of metadata and pixel art celebrating a Black or
+            African American pop culture icon. Think of it as a Pokédex, but
+            for the GOATs.
           </p>
           <p className="text-base leading-7 text-stone-700 md:text-lg">
-            The platform takes the guesswork out: there's a CLI for installing
-            and submitting, a tagged gallery so finding the right companion
-            doesn't require scrolling, and per-vibe collections like{" "}
+            The catalog spans music, film, sports, comedy, civil rights, and
+            literature. Find a companion by mood —{" "}
             <Link
               href="/vibe/cozy"
               className="text-[#5266ea] underline-offset-2 hover:underline"
             >
-              cozy pets
+              cozy
             </Link>{" "}
             or{" "}
             <Link
               href="/vibe/focused"
               className="text-[#5266ea] underline-offset-2 hover:underline"
             >
-              focused pets
+              focused
             </Link>
             .
           </p>
@@ -143,10 +142,10 @@ export default async function AboutPage() {
 
         <div className="space-y-4">
           <h2 className="text-2xl font-semibold tracking-tight text-stone-950 md:text-3xl">
-            How a pet pack works
+            How a homie pack works
           </h2>
           <p className="text-base leading-7 text-stone-700 md:text-lg">
-            Each pet is two files. <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">pet.json</code>{" "}
+            Each homie is two files. <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">pet.json</code>{" "}
             defines the metadata — name, the 9 animation states, frame durations
             — and{" "}
             <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">spritesheet.webp</code>{" "}

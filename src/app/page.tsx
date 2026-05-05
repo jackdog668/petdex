@@ -20,7 +20,7 @@ import { TrackOnClick } from "@/components/track-on-click";
 
 export const dynamic = "force-dynamic";
 
-const SITE_URL = "https://petdex.crafter.run";
+const SITE_URL = "https://homiedex.example.com";
 
 export default async function Home() {
   const [heroPets, totalPets, initialSearch] = await Promise.all([
@@ -34,14 +34,13 @@ export default async function Home() {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      name: "Petdex",
+      name: "Homiedex",
       url: `${SITE_URL}/`,
       description:
-        "Public gallery of animated pixel pets for the Codex CLI. Install one with a single command.",
+        "The Black & African American pop culture codex of pixel pets — legends as tiny animated companions.",
       publisher: {
         "@type": "Organization",
-        name: "Crafter Station",
-        url: "https://crafter.run",
+        name: "Homiedex",
       },
       potentialAction: {
         "@type": "SearchAction",
@@ -55,7 +54,7 @@ export default async function Home() {
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      name: "Featured Codex pets",
+      name: "Featured Homiedex pets",
       numberOfItems: heroPets.length,
       itemListElement: heroPets.map((pet, i) => ({
         "@type": "ListItem",
@@ -75,19 +74,19 @@ export default async function Home() {
 
           <div className="mt-12 flex flex-col items-center text-center md:mt-16">
             <p className="font-mono text-xs tracking-[0.22em] text-[#5266ea] uppercase">
-              The Codex pet index
+              The Black & African American pop culture pet index
             </p>
             <h1 className="mt-3 text-[48px] leading-[0.98] font-semibold tracking-tight md:text-[80px]">
-              Petdex
+              Homiedex
             </h1>
             <p className="mt-5 max-w-xl text-balance text-base leading-7 text-[#202127] md:text-lg">
-              The public gallery of animated pixel pets for the{" "}
-              <strong>Codex CLI</strong>. Browse {totalPets}+ open-source
-              companions, preview their states, and install one with a single
+              The codex of <strong>Black & African American pop culture</strong>{" "}
+              as tiny animated pixel pets. {totalPets}+ legends from music,
+              film, sports, comedy, and history — install one with a single
               command.
             </p>
             <CommandLine
-              command="npx petdex install boba"
+              command="npx petdex install biggie"
               source="hero"
               className="mt-5 w-full max-w-sm"
             />

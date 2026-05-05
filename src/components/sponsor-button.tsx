@@ -4,7 +4,8 @@ type SponsorButtonProps = {
   variant?: "nav" | "pill" | "inline";
 };
 
-const SPONSOR_URL = "https://github.com/sponsors/Railly";
+// TODO(brand): replace with your real sponsor link (GitHub Sponsors, Ko-fi, etc.)
+const SPONSOR_URL = "https://github.com/sponsors/your-handle";
 
 export function SponsorButton({ variant = "pill" }: SponsorButtonProps) {
   const className =

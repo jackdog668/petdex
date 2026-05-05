@@ -1,353 +1,260 @@
 [
   {
-    "id": "nukey",
-    "name": "Nukey",
-    "description": "A tiny friendly microwave companion for snack-fueled builds.",
-    "tags": ["object-pet", "snacks", "cozy"],
-    "status": "planned"
-  },
-  {
-    "id": "boba",
-    "name": "Boba",
-    "description": "A tiny otter sipping bubble tea while keeping you company in Codex.",
-    "tags": ["otter", "drink", "cozy"],
-    "status": "planned"
-  },
-  {
-    "id": "boxcat",
-    "name": "Boxcat",
-    "description": "A tiny cat tucked inside a cardboard box for cozy coding sessions.",
-    "tags": ["cat", "box", "cozy"],
-    "status": "planned"
-  },
-  {
-    "id": "captain-quack",
-    "name": "Captain Quack",
-    "description": "A tiny pirate duck companion with a jaunty hat.",
-    "tags": ["duck", "pirate", "hat"],
-    "status": "planned"
-  },
-  {
-    "id": "corsair-cat",
-    "name": "Corsair Cat",
-    "description": "A compact chibi cat wearing a pirate hat, ready as a Codex digital pet.",
-    "tags": ["cat", "pirate", "chibi"],
-    "status": "planned"
-  },
-  {
-    "id": "ice-cream-cat",
-    "name": "Ice Cream Cat",
-    "description": "A cheerful cat carrying an ice cream cone.",
-    "tags": ["cat", "sweet", "summer"],
-    "status": "planned"
-  },
-  {
-    "id": "pelican-pedal",
-    "name": "Pelican Pedal",
-    "description": "A compact Codex digital pet pelican happily riding a tiny bicycle.",
-    "tags": ["bird", "bicycle", "motion"],
-    "status": "planned"
-  },
-  {
-    "id": "punchy",
-    "name": "Punchy",
-    "description": "A scrappy little dog boxer with oversized red gloves.",
-    "tags": ["dog", "boxing", "sport"],
-    "status": "planned"
-  },
-  {
-    "id": "scoop",
-    "name": "Scoop",
-    "description": "A tiny ice cream cone digital pet with a cheerful face.",
-    "tags": ["sweet", "object-pet", "cute"],
-    "status": "planned"
-  },
-  {
-    "id": "skipper",
-    "name": "Skipper",
-    "description": "A tiny sailor cat for breezy workspace days.",
-    "tags": ["cat", "sailor", "ocean"],
-    "status": "planned"
-  },
-  {
-    "id": "byte-bunny",
-    "name": "Byte Bunny",
-    "description": "A tiny rabbit holding a little keyboard key like a lucky charm.",
-    "tags": ["rabbit", "keyboard", "coding"],
-    "status": "planned"
-  },
-  {
-    "id": "bugsy",
-    "name": "Bugsy",
-    "description": "A tiny harmless bug with goggles, ready to help inspect tricky diffs.",
-    "tags": ["bug", "debugging", "goggles"],
-    "status": "planned"
-  },
-  {
-    "id": "cache-capy",
-    "name": "Cache Capy",
-    "description": "A calm capybara carrying a tiny cache box for patient builds.",
-    "tags": ["capybara", "cache", "calm"],
-    "status": "planned"
-  },
-  {
-    "id": "commit-crab",
-    "name": "Commit Crab",
-    "description": "A tiny crab holding a checkmark badge after a clean commit.",
-    "tags": ["crab", "git", "badge"],
-    "status": "planned"
-  },
-  {
-    "id": "cursor-crow",
-    "name": "Cursor Crow",
-    "description": "A clever little crow perched on a cursor arrow.",
-    "tags": ["bird", "cursor", "clever"],
-    "status": "planned"
-  },
-  {
-    "id": "daemon-dumpling",
-    "name": "Daemon Dumpling",
-    "description": "A tiny dumpling companion watching background jobs with sleepy eyes.",
-    "tags": ["food", "daemon", "sleepy"],
-    "status": "planned"
-  },
-  {
-    "id": "deploy-dragon",
-    "name": "Deploy Dragon",
-    "description": "A tiny dragon guarding a successful deploy flag.",
-    "tags": ["dragon", "deploy", "flag"],
-    "status": "planned"
-  },
-  {
-    "id": "diff-dino",
-    "name": "Diff Dino",
-    "description": "A small dinosaur stomping around a tiny diff marker.",
-    "tags": ["dinosaur", "git", "review"],
-    "status": "planned"
-  },
-  {
-    "id": "docker-donut",
-    "name": "Docker Donut",
-    "description": "A cheerful donut floating inside a tiny shipping container.",
-    "tags": ["food", "container", "devops"],
-    "status": "planned"
-  },
-  {
-    "id": "envy",
-    "name": "Envy",
-    "description": "A tiny green envelope guarding environment variables.",
-    "tags": ["object-pet", "env", "green"],
-    "status": "planned"
-  },
-  {
-    "id": "fiber-fox",
-    "name": "Fiber Fox",
-    "description": "A quick little fox wrapped in a glowing fiber cable.",
-    "tags": ["fox", "network", "fast"],
-    "status": "planned"
-  },
-  {
-    "id": "figma-frog",
-    "name": "Figma Frog",
-    "description": "A tiny frog carrying colorful design swatches.",
-    "tags": ["frog", "design", "swatches"],
-    "status": "planned"
-  },
-  {
-    "id": "git-goose",
-    "name": "Git Goose",
-    "description": "A focused goose holding a tiny branch sign.",
-    "tags": ["goose", "git", "branch"],
-    "status": "planned"
-  },
-  {
-    "id": "glitch-ghost",
-    "name": "Glitch Ghost",
-    "description": "A friendly little ghost with pixel glitch edges.",
-    "tags": ["ghost", "glitch", "pixel"],
-    "status": "planned"
-  },
-  {
-    "id": "hash-hamster",
-    "name": "Hash Hamster",
-    "description": "A tiny hamster carrying a hash symbol like a snack.",
-    "tags": ["hamster", "hash", "cute"],
-    "status": "planned"
-  },
-  {
-    "id": "kebo",
-    "name": "Kebo",
-    "description": "A tiny white koala fintech companion with purple accents, black shirt, and cheerful money check-in energy.",
-    "tags": ["koala", "fintech", "purple"],
-    "status": "imported",
+    "id": "biggie",
+    "name": "Biggie",
+    "description": "A tiny crowned king of New York rap rocking shades and a Coogi sweater.",
+    "tags": ["music", "hip-hop", "ny"],
+    "status": "planned",
     "featured": true
   },
   {
-    "id": "lambda-lamb",
-    "name": "Lambda Lamb",
-    "description": "A woolly lamb carrying a lambda charm.",
-    "tags": ["lamb", "lambda", "functional"],
+    "id": "tupac",
+    "name": "Pac",
+    "description": "A tiny west-coast poet with a bandana, throwing up a peace sign.",
+    "tags": ["music", "hip-hop", "west-coast"],
     "status": "planned"
   },
   {
-    "id": "latte-llama",
-    "name": "Latte Llama",
-    "description": "A tiny llama balancing a warm latte cup.",
-    "tags": ["llama", "coffee", "cozy"],
+    "id": "miles-davis",
+    "name": "Miles",
+    "description": "A cool jazz cat in shades blowing a tiny blue trumpet.",
+    "tags": ["music", "jazz", "shades"],
     "status": "planned"
   },
   {
-    "id": "lint-lizard",
-    "name": "Lint Lizard",
-    "description": "A little lizard brushing lint off a code file.",
-    "tags": ["lizard", "lint", "clean"],
+    "id": "prince",
+    "name": "Prince",
+    "description": "A tiny purple-clad icon shredding a heart-shaped guitar.",
+    "tags": ["music", "funk", "purple"],
+    "status": "planned",
+    "featured": true
+  },
+  {
+    "id": "stevie",
+    "name": "Stevie",
+    "description": "A grinning keyboard prodigy in beaded braids and round shades.",
+    "tags": ["music", "soul", "keyboard"],
     "status": "planned"
   },
   {
-    "id": "merge-mole",
-    "name": "Merge Mole",
-    "description": "A tiny mole tunneling between two branch markers.",
-    "tags": ["mole", "git", "merge"],
+    "id": "aretha",
+    "name": "Aretha",
+    "description": "The Queen of Soul belting at a tiny grand piano.",
+    "tags": ["music", "soul", "queen"],
     "status": "planned"
   },
   {
-    "id": "neon-newt",
-    "name": "Neon Newt",
-    "description": "A small newt glowing with bright database energy.",
-    "tags": ["newt", "database", "neon"],
+    "id": "jimi",
+    "name": "Jimi",
+    "description": "A psychedelic guitarist in a fringed jacket, axe wreathed in flame.",
+    "tags": ["music", "rock", "guitar"],
     "status": "planned"
   },
   {
-    "id": "pixel-panda",
-    "name": "Pixel Panda",
-    "description": "A gentle panda holding a tiny pixel brush.",
-    "tags": ["panda", "pixel", "art"],
+    "id": "bey",
+    "name": "Bey",
+    "description": "A tiny Houston superstar mid mic-drop with a fan on full blast.",
+    "tags": ["music", "pop", "stage"],
+    "status": "planned",
+    "featured": true
+  },
+  {
+    "id": "snoop",
+    "name": "Snoop",
+    "description": "A laid-back Long Beach mascot in braids and a flannel.",
+    "tags": ["music", "hip-hop", "west-coast"],
     "status": "planned"
   },
   {
-    "id": "prompt-penguin",
-    "name": "Prompt Penguin",
-    "description": "A small penguin holding a folded prompt scroll.",
-    "tags": ["penguin", "prompt", "scroll"],
+    "id": "kendrick",
+    "name": "Kendrick",
+    "description": "A pint-sized Compton lyricist holding a tiny Pulitzer.",
+    "tags": ["music", "hip-hop", "compton"],
     "status": "planned"
   },
   {
-    "id": "queue-quokka",
-    "name": "Queue Quokka",
-    "description": "A cheerful quokka holding a tiny task queue ticket.",
-    "tags": ["quokka", "queue", "jobs"],
+    "id": "mj",
+    "name": "MJ",
+    "description": "A sequined glove and fedora moonwalking on a tiny stage.",
+    "tags": ["music", "pop", "moonwalk"],
     "status": "planned"
   },
   {
-    "id": "query-quail",
-    "name": "Query Quail",
-    "description": "A tiny quail pecking at a small search bar.",
-    "tags": ["quail", "search", "query"],
+    "id": "missy",
+    "name": "Missy",
+    "description": "A futuristic visionary in an inflatable trash-bag suit.",
+    "tags": ["music", "hip-hop", "futurism"],
     "status": "planned"
   },
   {
-    "id": "r2-rover",
-    "name": "R2 Rover",
-    "description": "A tiny storage robot carrying an R2 bucket.",
-    "tags": ["robot", "storage", "r2"],
+    "id": "shaft",
+    "name": "Shaft",
+    "description": "A tiny private eye in a leather trench, walking through Harlem steam.",
+    "tags": ["film", "70s", "detective"],
     "status": "planned"
   },
   {
-    "id": "render-ram",
-    "name": "Render Ram",
-    "description": "A tiny ram pushing a little render progress bar.",
-    "tags": ["ram", "render", "progress"],
+    "id": "blade",
+    "name": "Blade",
+    "description": "A daywalking vampire hunter in shades with a tiny silver sword.",
+    "tags": ["film", "comics", "hunter"],
     "status": "planned"
   },
   {
-    "id": "router-raven",
-    "name": "Router Raven",
-    "description": "A tiny raven carrying route cards in its beak.",
-    "tags": ["raven", "router", "cards"],
+    "id": "huey",
+    "name": "Huey",
+    "description": "A mighty afro and a katana — a tiny revolutionary in training.",
+    "tags": ["tv", "animation", "afro"],
     "status": "planned"
   },
   {
-    "id": "schema-seal",
-    "name": "Schema Seal",
-    "description": "A little seal stamping a database schema.",
-    "tags": ["seal", "database", "schema"],
+    "id": "luke-cage",
+    "name": "Luke",
+    "description": "A bulletproof Harlem hero in a hoodie shrugging off shots.",
+    "tags": ["tv", "comics", "harlem"],
     "status": "planned"
   },
   {
-    "id": "ship-squid",
-    "name": "Ship Squid",
-    "description": "A small squid piloting a tiny release ship.",
-    "tags": ["squid", "ship", "release"],
+    "id": "tchalla",
+    "name": "Panther",
+    "description": "A tiny Wakandan king in a vibranium suit, claws out.",
+    "tags": ["film", "comics", "wakanda"],
+    "status": "planned",
+    "featured": true
+  },
+  {
+    "id": "storm",
+    "name": "Storm",
+    "description": "A white-haired weather goddess floating with sparking eyes.",
+    "tags": ["comics", "x-men", "weather"],
     "status": "planned"
   },
   {
-    "id": "socket-shark",
-    "name": "Socket Shark",
-    "description": "A tiny shark swimming through a websocket ring.",
-    "tags": ["shark", "socket", "network"],
+    "id": "miles-morales",
+    "name": "Miles M.",
+    "description": "A Brooklyn spider-kid mid-leap with venom strike sparks.",
+    "tags": ["comics", "spider", "brooklyn"],
     "status": "planned"
   },
   {
-    "id": "stack-sheep",
-    "name": "Stack Sheep",
-    "description": "A fluffy sheep balancing a stack of tiny windows.",
-    "tags": ["sheep", "stack", "windows"],
+    "id": "static",
+    "name": "Static",
+    "description": "A tiny electromagnetic teen surfing a manhole cover.",
+    "tags": ["tv", "animation", "electric"],
     "status": "planned"
   },
   {
-    "id": "syntax-sloth",
-    "name": "Syntax Sloth",
-    "description": "A tiny sloth slowly polishing a syntax tree.",
-    "tags": ["sloth", "syntax", "tree"],
+    "id": "fresh-prince",
+    "name": "Fresh",
+    "description": "A West Philly kid in flipped cap and Bel-Air-bound sneakers.",
+    "tags": ["tv", "90s", "philly"],
     "status": "planned"
   },
   {
-    "id": "token-turtle",
-    "name": "Token Turtle",
-    "description": "A small turtle carrying a secure token shell.",
-    "tags": ["turtle", "auth", "token"],
+    "id": "carlton",
+    "name": "Carlton",
+    "description": "A tiny prepster mid-Carlton-dance, sweater knotted on shoulders.",
+    "tags": ["tv", "90s", "dance"],
     "status": "planned"
   },
   {
-    "id": "trigger-tiger",
-    "name": "Trigger Tiger",
-    "description": "A tiny tiger watching a background job trigger.",
-    "tags": ["tiger", "jobs", "trigger"],
+    "id": "urkel",
+    "name": "Urkel",
+    "description": "A pint-sized neighbor in suspenders, glasses, and hiked-up jeans.",
+    "tags": ["tv", "90s", "nerd"],
     "status": "planned"
   },
   {
-    "id": "turbopack-toucan",
-    "name": "Turbopack Toucan",
-    "description": "A bright toucan carrying a tiny lightning-fast bundle.",
-    "tags": ["toucan", "bundle", "fast"],
+    "id": "ali",
+    "name": "Ali",
+    "description": "The Greatest, gloves up, floating like a tiny butterfly.",
+    "tags": ["sports", "boxing", "goat"],
+    "status": "planned",
+    "featured": true
+  },
+  {
+    "id": "jordan",
+    "name": "MJ23",
+    "description": "A tiny tongue-out legend mid-flight on a dunk.",
+    "tags": ["sports", "basketball", "chicago"],
     "status": "planned"
   },
   {
-    "id": "vault-viper",
-    "name": "Vault Viper",
-    "description": "A tiny viper guarding a safe vault door.",
-    "tags": ["snake", "vault", "security"],
+    "id": "kobe",
+    "name": "Mamba",
+    "description": "A focused tiny mamba with a fadeaway jumper queued up.",
+    "tags": ["sports", "basketball", "mamba"],
     "status": "planned"
   },
   {
-    "id": "vector-vicuna",
-    "name": "Vector Vicuna",
-    "description": "A tiny vicuna carrying glowing vector dots.",
-    "tags": ["vicuna", "vector", "memory"],
+    "id": "serena",
+    "name": "Serena",
+    "description": "A tiny tennis champion mid-serve in beaded braids.",
+    "tags": ["sports", "tennis", "goat"],
     "status": "planned"
   },
   {
-    "id": "webhook-whale",
-    "name": "Webhook Whale",
-    "description": "A baby whale delivering a tiny webhook envelope.",
-    "tags": ["whale", "webhook", "message"],
+    "id": "pryor",
+    "name": "Pryor",
+    "description": "A tiny stand-up legend on a barstool with a hot mic.",
+    "tags": ["comedy", "70s", "mic"],
     "status": "planned"
   },
   {
-    "id": "worker-wombat",
-    "name": "Worker Wombat",
-    "description": "A sturdy wombat wearing a tiny worker helmet.",
-    "tags": ["wombat", "worker", "cloud"],
+    "id": "eddie",
+    "name": "Eddie",
+    "description": "A red leather jumpsuit and a thousand-watt grin.",
+    "tags": ["comedy", "80s", "leather"],
+    "status": "planned"
+  },
+  {
+    "id": "chappelle",
+    "name": "Dave",
+    "description": "A tiny comic with a smoldering cigarette and a knowing smirk.",
+    "tags": ["comedy", "tv", "stand-up"],
+    "status": "planned"
+  },
+  {
+    "id": "mlk",
+    "name": "MLK",
+    "description": "A tiny preacher at a podium, hand raised mid-dream.",
+    "tags": ["history", "civil-rights", "podium"],
+    "status": "planned",
+    "featured": true
+  },
+  {
+    "id": "malcolm-x",
+    "name": "Malcolm",
+    "description": "A tiny figure in horn-rimmed glasses, finger raised, by any means.",
+    "tags": ["history", "civil-rights", "glasses"],
+    "status": "planned"
+  },
+  {
+    "id": "harriet",
+    "name": "Harriet",
+    "description": "A tiny conductor of the Underground Railroad with a swinging lantern.",
+    "tags": ["history", "civil-rights", "lantern"],
+    "status": "planned"
+  },
+  {
+    "id": "baldwin",
+    "name": "Baldwin",
+    "description": "A tiny essayist at a typewriter, cigarette curling smoke.",
+    "tags": ["literature", "essayist", "typewriter"],
+    "status": "planned"
+  },
+  {
+    "id": "maya",
+    "name": "Maya",
+    "description": "A tiny poet rising, an open book of caged-bird verses in hand.",
+    "tags": ["literature", "poetry", "book"],
+    "status": "planned"
+  },
+  {
+    "id": "toni",
+    "name": "Toni",
+    "description": "A tiny Nobel laureate with locs, pen and beloved manuscript in hand.",
+    "tags": ["literature", "nobel", "pen"],
     "status": "planned"
   }
 ]

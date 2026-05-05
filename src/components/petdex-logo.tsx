@@ -17,7 +17,7 @@ export function PetdexLogo({
     <>
       <PetdexMark className={markClassName} />
       {showWordmark ? (
-        <span className="text-xl font-semibold tracking-normal">Petdex</span>
+        <span className="text-xl font-semibold tracking-normal">Homiedex</span>
       ) : null}
     </>
   );
@@ -26,7 +26,7 @@ export function PetdexLogo({
 
   if (href) {
     return (
-      <Link href={href} className={classes} aria-label="Petdex home">
+      <Link href={href} className={classes} aria-label="Homiedex home">
         {content}
       </Link>
     );
