@@ -1,5 +1,5 @@
 {
-  "name": "petdex",
+  "name": "homiedex",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,29 +9,16 @@
     "check": "biome check .",
     "format": "biome check --write .",
     "generate-assets": "bun scripts/generate-assets.ts",
-    "auto-tag": "bun scripts/auto-tag.ts",
     "test": "bun test"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.1041.0",
-    "@aws-sdk/s3-request-presigner": "^3.1041.0",
-    "@clerk/nextjs": "^7.3.0",
-    "@neondatabase/serverless": "^1.1.0",
-    "@uploadthing/react": "^7.3.3",
-    "@upstash/ratelimit": "^2.0.8",
-    "@upstash/redis": "^1.37.0",
     "@vercel/analytics": "^2.0.1",
-    "drizzle-orm": "^0.45.2",
-    "jszip": "^3.10.1",
     "lucide-react": "^1.14.0",
     "next": "16.2.4",
-    "openai": "^6.35.0",
     "postcss": "^8.5.13",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "resend": "^6.12.2",
-    "sharp": "^0.34.5",
-    "uploadthing": "^7.7.4"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",
@@ -39,7 +26,6 @@
     "@types/node": "^20.19.39",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "drizzle-kit": "^0.31.10",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"
   },

@@ -479,7 +479,6 @@ function PetCard({ pet, index, stateCount }: PetCardProps) {
           pet={{
             slug: pet.slug,
             displayName: pet.displayName,
-            zipUrl: pet.zipUrl,
             description: pet.description,
           }}
         />

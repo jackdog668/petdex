@@ -1,8 +1,7 @@
 import Link from "next/link";
 
-import { ArrowRight, Search, Sparkles } from "lucide-react";
+import { Search, Sparkles } from "lucide-react";
 
-import { CommandLine } from "@/components/command-line";
 import { PetSprite } from "@/components/pet-sprite";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -11,8 +10,8 @@ import { getApprovedPetCount, getFeaturedPetsWithMetrics } from "@/lib/pets";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Pet not found",
-  description: "This pet wandered off the index. Try one of these instead.",
+  title: "Homie not found",
+  description: "This homie wandered off the codex. Try one of these instead.",
   robots: { index: false, follow: false },
 };
 
@@ -38,12 +37,12 @@ export default async function NotFound() {
               Error 404
             </p>
             <h1 className="mt-3 text-balance text-[42px] leading-[1] font-semibold tracking-tight md:text-[64px]">
-              This pet wandered off
+              This homie wandered off
             </h1>
             <p className="mt-5 max-w-xl text-balance text-base leading-7 text-[#202127] md:text-lg">
-              The page you tried to reach isn't in the index. Could be a typo,
-              a withdrawn submission, or a pet that hasn't been approved yet.
-              Try one of these instead.
+              The page you tried to reach isn't in the codex. Could be a typo,
+              or a homie that hasn't been pixel-arted yet. Try one of these
+              instead.
             </p>
 
             {lost ? (
@@ -76,21 +75,14 @@ export default async function NotFound() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-6 text-sm font-medium text-white transition hover:bg-black/85"
             >
               <Search className="size-4" />
-              Browse {total > 0 ? `${total}+ pets` : "the gallery"}
+              Browse {total > 0 ? `${total}+ homies` : "the gallery"}
             </Link>
             <Link
               href="/about"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 px-6 text-sm font-medium text-black backdrop-blur transition hover:bg-white"
             >
               <Sparkles className="size-4" />
-              About Petdex
-            </Link>
-            <Link
-              href="/submit"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 px-6 text-sm font-medium text-black backdrop-blur transition hover:bg-white"
-            >
-              Submit a pet
-              <ArrowRight className="size-4" />
+              About Homiedex
             </Link>
           </div>
         </div>
@@ -138,16 +130,6 @@ export default async function NotFound() {
             ))}
           </div>
 
-          <div className="mt-2 rounded-2xl border border-black/[0.08] bg-white/55 px-5 py-4 backdrop-blur">
-            <p className="font-mono text-[10px] tracking-[0.22em] text-stone-500 uppercase">
-              Or install one from the terminal
-            </p>
-            <CommandLine
-              command={`npx petdex install ${lost?.slug ?? "boba"}`}
-              source="not-found"
-              className="mt-3"
-            />
-          </div>
         </section>
       ) : null}
 

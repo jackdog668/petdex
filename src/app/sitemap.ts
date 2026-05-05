@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 import { getAllApprovedPets } from "@/lib/pets";
 import { PET_KINDS, PET_VIBES } from "@/lib/types";
 
-const SITE = "https://petdex.crafter.run";
+const SITE = "https://homiedex.vercel.app";
 
 export const revalidate = 3600;
 

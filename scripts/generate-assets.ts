@@ -63,8 +63,8 @@ async function createOg(markSvg: string, width: number, height: number) {
       <rect width="${width}" height="${height}" fill="#f7f8ff"/>
       <rect width="${width}" height="${height}" fill="url(#glow)"/>
       <rect width="${width}" height="${height}" fill="url(#soft)"/>
-      <text x="${width / 2}" y="${height / 2 + 72}" fill="#050505" font-family="Inter, Arial, sans-serif" font-size="94" font-weight="600" text-anchor="middle">Petdex</text>
-      <text x="${width / 2}" y="${height / 2 + 128}" fill="#252631" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="middle">Animated Codex pets, ready to preview and download</text>
+      <text x="${width / 2}" y="${height / 2 + 72}" fill="#050505" font-family="Inter, Arial, sans-serif" font-size="94" font-weight="600" text-anchor="middle">Homiedex</text>
+      <text x="${width / 2}" y="${height / 2 + 128}" fill="#252631" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="middle">Black &amp; African American pop culture pixel pets</text>
     </svg>
   `);
 
