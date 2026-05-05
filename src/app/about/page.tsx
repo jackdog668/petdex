@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { CommandLine } from "@/components/command-line";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -30,20 +29,20 @@ const FAQ: { q: string; a: string }[] = [
     a: "Homiedex is a codex of Black & African American pop culture icons — musicians, athletes, actors, comedians, civil rights figures, writers — reimagined as tiny animated pixel pets. Each entry is a small spritesheet with 9 states (idle, working, sleeping, etc.) that can live in the Codex CLI or anywhere else you want a chibi homie cheering you on.",
   },
   {
-    q: "How do I install a pet?",
-    a: "From the gallery page or any pet detail page, copy the install command (looks like `npx petdex install biggie`) and paste it into your terminal. The CLI drops the pet under ~/.codex/pets/<slug>/ and tells Codex to use it. Works on macOS, Linux, and Windows (via PowerShell).",
+    q: "How do I install a homie?",
+    a: "Open any homie's detail page and click Download on pet.json and spritesheet.webp. Move both files into a folder named after the homie's slug (e.g. ~/.codex/pets/biggie/). Then in Codex go to Settings → Appearance → Pets and select the homie. Use /pet inside Codex to wake it.",
   },
   {
-    q: "Where do the pets come from?",
-    a: "Curated by the Homiedex team and the community. The featured set covers a broad sweep — Biggie, Prince, Bey, T'Challa, Ali, MLK — and the catalog grows as new homies get pixel-arted and submitted.",
+    q: "Where do the homies come from?",
+    a: "Hand-curated. Each homie is a pixel sprite generated and reviewed individually — the featured set covers a broad sweep (Biggie, Prince, Bey, T'Challa, Ali, MLK), and the catalog grows as new homies get pixel-arted and committed to the repo.",
   },
   {
-    q: "Can I submit my own pet?",
-    a: "Yes. Sign in and run `npx petdex submit ./my-pet/` — the CLI queues your submission for review. You can also submit through the website at /submit. All you need is a pet.json file and a 9-state spritesheet.",
+    q: "Can I add a new homie?",
+    a: "The repo is open. Fork it on GitHub, add public/pets/<slug>/pet.json + public/pets/<slug>/spritesheet.webp, and open a pull request. The site auto-rebuilds on merge.",
   },
   {
     q: "Is Homiedex free and open source?",
-    a: "Every pet is free to install and use. Pets credit their original artists. The Homiedex site itself is open source.",
+    a: "Yes. Every homie is free to install and use, and the site itself is open source on GitHub.",
   },
   {
     q: "What's a vibe? What's a kind?",
@@ -51,7 +50,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "How does Homiedex make money?",
-    a: "It doesn't. It's a labor-of-love project. No ads, no upsells, no telemetry beyond basic analytics on which pets get installed.",
+    a: "It doesn't. It's a labor-of-love project. No ads, no upsells.",
   },
 ];
 
@@ -97,14 +96,9 @@ export default async function AboutPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-balance text-base leading-7 text-[#202127] md:text-lg">
               {totalPets}+ Black & African American pop culture legends as tiny
-              animated pixel pets. Install one with a single command, post one
-              up in your terminal, and ship code with the GOATs.
+              animated pixel pets. Drop one in your terminal and ship code
+              with the GOATs.
             </p>
-            <CommandLine
-              command="npx petdex install biggie"
-              source="about-hero"
-              className="mt-5 w-full max-w-sm"
-            />
           </div>
         </div>
       </section>

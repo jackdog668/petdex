@@ -1,0 +1,9 @@
+{
+  "id": "biggie",
+  "displayName": "Biggie",
+  "description": "A tiny crowned king of New York rap rocking shades and a Coogi sweater.",
+  "kind": "character",
+  "vibes": ["heroic", "edgy"],
+  "tags": ["music", "hip-hop", "ny"],
+  "featured": true
+}

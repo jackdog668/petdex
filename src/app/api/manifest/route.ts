@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-import { getAllPetsPackPath } from "@/lib/downloads";
 import { getAllApprovedPets } from "@/lib/pets";
 
 export const runtime = "nodejs";
@@ -19,11 +18,11 @@ export async function GET(req: Request): Promise<Response> {
     tags: pet.tags,
     featured: pet.featured ?? false,
     submittedBy: pet.submittedBy?.name ?? null,
-    installCommand: `curl -sSf ${origin}/install/${pet.slug} | sh`,
     pageUrl: `${origin}/pets/${pet.slug}`,
-    spritesheetUrl: pet.spritesheetPath,
-    petJsonUrl: pet.petJsonPath,
-    zipUrl: pet.zipUrl ?? null,
+    spritesheetUrl: pet.spritesheetPath
+      ? `${origin}${pet.spritesheetPath}`
+      : null,
+    petJsonUrl: `${origin}${pet.petJsonPath}`,
   }));
 
   return NextResponse.json(
@@ -31,7 +30,6 @@ export async function GET(req: Request): Promise<Response> {
       generatedAt: new Date().toISOString(),
       total: items.length,
       featured: items.filter((p) => p.featured).length,
-      allPetsPackPath: getAllPetsPackPath(),
       pets: items,
     },
     {

@@ -9,7 +9,7 @@ import {
 } from "@/lib/pets";
 import { PET_KINDS, type PetKind } from "@/lib/types";
 
-const SITE_URL = "https://petdex.crafter.run";
+const SITE_URL = "https://homiedex.vercel.app";
 
 type Props = { params: Promise<{ kind: string }> };
 
@@ -103,7 +103,6 @@ export default async function KindPage({ params }: Props) {
         intro={copy.intro}
         count={filtered.length}
         pets={filtered}
-        exampleSlug={filtered[0]?.slug}
         relatedLabel="Other kinds"
         related={related}
       />

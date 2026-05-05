@@ -18,7 +18,7 @@ function curatedSort(pets: PetWithMetrics[]): PetWithMetrics[] {
   });
 }
 
-const SITE_URL = "https://petdex.crafter.run";
+const SITE_URL = "https://homiedex.vercel.app";
 
 type Props = { params: Promise<{ vibe: string }> };
 
@@ -111,7 +111,6 @@ export default async function VibePage({ params }: Props) {
         intro={copy.intro}
         count={filtered.length}
         pets={filtered}
-        exampleSlug={filtered[0]?.slug}
         relatedLabel="Related vibes"
         related={related}
       />

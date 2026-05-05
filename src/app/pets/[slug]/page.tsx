@@ -1,23 +1,18 @@
 import { notFound } from "next/navigation";
 
-import { auth } from "@clerk/nextjs/server";
-import { and, eq } from "drizzle-orm";
 import { FileJson, Sparkles } from "lucide-react";
 
-import { db, schema } from "@/lib/db/client";
-import { getMetricsForSlug } from "@/lib/db/metrics";
 import { getPet, getStaticPetSlugs } from "@/lib/pets";
 
 import { InstallCommand } from "@/components/install-command";
 import { JsonLd } from "@/components/json-ld";
-import { LikeButton } from "@/components/like-button";
 import { PetActionMenu } from "@/components/pet-action-menu";
 import { PetStateViewer } from "@/components/pet-state-viewer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SubmittedBy } from "@/components/submitted-by";
 
-const SITE_URL = "https://petdex.crafter.run";
+const SITE_URL = "https://homiedex.vercel.app";
 
 type PageProps = {
   params: Promise<{
@@ -39,13 +34,13 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!pet) {
     return {
-      title: "Pet not found",
+      title: "Homie not found",
       robots: { index: false, follow: false },
     };
   }
 
-  const title = `${pet.displayName} — Animated Codex pet`;
-  const description = `Install ${pet.displayName} for the Codex CLI: ${pet.description} One command, animated pixel art, ${pet.tags.slice(0, 3).join(" + ") || "open source"}.`;
+  const title = `${pet.displayName} — Homiedex`;
+  const description = `${pet.description} A pixel pet from the Homiedex codex of Black & African American pop culture.`;
   const url = `${SITE_URL}/pets/${pet.slug}`;
 
   return {
@@ -54,9 +49,9 @@ export async function generateMetadata({ params }: PageProps) {
     alternates: { canonical: `/pets/${pet.slug}` },
     keywords: [
       pet.displayName,
-      `${pet.displayName} Codex pet`,
       `${pet.displayName} pixel pet`,
-      "Codex CLI pet",
+      "Homiedex",
+      "Black pop culture",
       ...pet.tags.slice(0, 4),
       ...pet.vibes.slice(0, 2),
     ],
@@ -65,7 +60,6 @@ export async function generateMetadata({ params }: PageProps) {
       description,
       url,
       type: "article",
-      // images auto-injected from app/pets/[slug]/opengraph-image.tsx
     },
     twitter: {
       card: "summary_large_image",
@@ -82,19 +76,6 @@ export default async function PetPage({ params }: PageProps) {
   if (!pet) {
     notFound();
   }
-
-  const { userId } = await auth();
-  const metrics = await getMetricsForSlug(slug);
-  const initialLiked = userId
-    ? Boolean(
-        await db.query.petLikes.findFirst({
-          where: and(
-            eq(schema.petLikes.userId, userId),
-            eq(schema.petLikes.petSlug, slug),
-          ),
-        }),
-      )
-    : false;
 
   const url = `${SITE_URL}/pets/${pet.slug}`;
   const jsonLd = [
@@ -122,15 +103,6 @@ export default async function PetPage({ params }: PageProps) {
             },
           }
         : {}),
-      ...(metrics.likeCount > 0
-        ? {
-            interactionStatistic: {
-              "@type": "InteractionCounter",
-              interactionType: "https://schema.org/LikeAction",
-              userInteractionCount: metrics.likeCount,
-            },
-          }
-        : {}),
     },
     {
       "@context": "https://schema.org",
@@ -139,13 +111,13 @@ export default async function PetPage({ params }: PageProps) {
         {
           "@type": "ListItem",
           position: 1,
-          name: "Petdex",
+          name: "Homiedex",
           item: SITE_URL,
         },
         {
           "@type": "ListItem",
           position: 2,
-          name: "Pets",
+          name: "Homies",
           item: `${SITE_URL}/#gallery`,
         },
         {
@@ -165,11 +137,10 @@ export default async function PetPage({ params }: PageProps) {
         <SiteHeader />
       </section>
       <section className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-5 pb-12 md:px-8 md:pb-16">
-
         <header className="grid gap-6 lg:grid-cols-[1fr_460px] lg:items-start">
           <div>
             <p className="text-sm font-semibold tracking-[0.18em] text-cyan-700 uppercase">
-              {pet.featured ? "Featured Petdex entry" : "Petdex entry"}
+              {pet.featured ? "Featured homie" : "Homiedex entry"}
             </p>
             <h1 className="mt-3 text-5xl font-semibold text-stone-950 md:text-7xl">
               {pet.displayName}
@@ -178,25 +149,14 @@ export default async function PetPage({ params }: PageProps) {
               {pet.description}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <LikeButton
-                slug={pet.slug}
-                initialCount={metrics.likeCount}
-                initialLiked={initialLiked}
-                signedIn={Boolean(userId)}
-              />
               <PetActionMenu
                 pet={{
                   slug: pet.slug,
                   displayName: pet.displayName,
-                  zipUrl: pet.zipUrl,
                   description: pet.description,
                 }}
                 variant="detail"
               />
-              <span className="font-mono text-[11px] tracking-[0.18em] text-stone-500 uppercase">
-                {metrics.installCount} installs · {metrics.zipDownloadCount} zip
-                downloads
-              </span>
             </div>
             {pet.tags.length > 0 ? (
               <div className="mt-6 flex flex-wrap gap-2">
@@ -221,8 +181,8 @@ export default async function PetPage({ params }: PageProps) {
           {pet.submittedBy ? (
             <SubmittedBy credit={pet.submittedBy} />
           ) : (
-            <InfoCard title="Submission" icon={<Sparkles className="size-4" />}>
-              <p>Curated entry.</p>
+            <InfoCard title="Source" icon={<Sparkles className="size-4" />}>
+              <p>Curated homie.</p>
               <p>Updated {new Date(pet.importedAt).toLocaleDateString()}</p>
             </InfoCard>
           )}
@@ -233,7 +193,9 @@ export default async function PetPage({ params }: PageProps) {
             </p>
             <p>
               <span className="font-medium text-stone-950">spritesheet:</span>{" "}
-              <span className="break-all">{pet.spritesheetPath}</span>
+              <span className="break-all">
+                {pet.spritesheetPath || "(not yet committed)"}
+              </span>
             </p>
           </InfoCard>
         </section>

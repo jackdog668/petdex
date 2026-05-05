@@ -9,7 +9,6 @@ import { Heart, TerminalSquare } from "lucide-react";
 import type { PetWithMetrics } from "@/lib/pets";
 import { petStates } from "@/lib/pet-states";
 
-import { CommandLine } from "@/components/command-line";
 import { PetActionMenu } from "@/components/pet-action-menu";
 import { PetSprite } from "@/components/pet-sprite";
 import { SiteFooter } from "@/components/site-footer";
@@ -21,7 +20,6 @@ type FacetPageProps = {
   intro: string;
   count: number;
   pets: PetWithMetrics[];
-  exampleSlug?: string;
   relatedLabel: string;
   related: { href: string; label: string; count: number }[];
 };
@@ -32,12 +30,10 @@ export function FacetPage({
   intro,
   count,
   pets,
-  exampleSlug,
   relatedLabel,
   related,
 }: FacetPageProps) {
   const stateCount = petStates.length;
-  const cmd = `npx petdex install ${exampleSlug ?? pets[0]?.slug ?? "boba"}`;
 
   return (
     <main className="min-h-screen bg-[#f7f8ff] text-[#050505]">
@@ -54,13 +50,8 @@ export function FacetPage({
             <p className="mt-5 max-w-2xl text-balance text-base leading-7 text-[#202127] md:text-lg">
               {intro}
             </p>
-            <CommandLine
-              command={cmd}
-              source="facet-hero"
-              className="mt-5 w-full max-w-sm"
-            />
-            <p className="mt-3 font-mono text-[11px] tracking-[0.18em] text-stone-500 uppercase">
-              {count} pets in this collection
+            <p className="mt-5 font-mono text-[11px] tracking-[0.18em] text-stone-500 uppercase">
+              {count} homies in this collection
             </p>
           </div>
         </div>
@@ -188,7 +179,6 @@ function PetCard({
           pet={{
             slug: pet.slug,
             displayName: pet.displayName,
-            zipUrl: pet.zipUrl,
             description: pet.description,
           }}
         />

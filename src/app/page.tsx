@@ -1,8 +1,5 @@
 import Link from "next/link";
 
-import { Download } from "lucide-react";
-
-import { getAllPetsPackPath } from "@/lib/downloads";
 import { searchPets } from "@/lib/pet-search";
 import {
   type PetWithMetrics,
@@ -10,13 +7,11 @@ import {
   getFeaturedPetsWithMetrics,
 } from "@/lib/pets";
 
-import { CommandLine } from "@/components/command-line";
 import { JsonLd } from "@/components/json-ld";
 import { PetGallery } from "@/components/pet-gallery";
 import { PetSprite } from "@/components/pet-sprite";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { TrackOnClick } from "@/components/track-on-click";
 
 export const dynamic = "force-dynamic";
 
@@ -82,41 +77,34 @@ export default async function Home() {
             <p className="mt-5 max-w-xl text-balance text-base leading-7 text-[#202127] md:text-lg">
               The codex of <strong>Black & African American pop culture</strong>{" "}
               as tiny animated pixel pets. {totalPets}+ legends from music,
-              film, sports, comedy, and history — install one with a single
-              command.
+              film, sports, comedy, and history — drop one in your terminal
+              and ship code with the GOATs.
             </p>
-            <CommandLine
-              command="npx petdex install biggie"
-              source="hero"
-              className="mt-5 w-full max-w-sm"
-            />
           </div>
 
           <HeroPetParade pets={heroPets} />
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <TrackOnClick
-              event="pack_downloaded"
-              payload={{ scope: "all" }}
-              href={getAllPetsPackPath()}
-              download
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-6 text-sm font-medium text-white transition hover:bg-black/85"
-            >
-              <Download className="size-4" />
-              Download all pets
-            </TrackOnClick>
             <Link
               href="#gallery"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 px-6 text-sm font-medium text-black backdrop-blur transition hover:bg-white"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-6 text-sm font-medium text-white transition hover:bg-black/85"
             >
               Browse gallery
             </Link>
             <Link
-              href="/docs"
+              href="/about"
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 px-6 text-sm font-medium text-black backdrop-blur transition hover:bg-white"
             >
-              CLI docs
+              About
             </Link>
+            <a
+              href="https://github.com/jackdog668/homiedex"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-black/10 bg-white/70 px-6 text-sm font-medium text-black backdrop-blur transition hover:bg-white"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </section>

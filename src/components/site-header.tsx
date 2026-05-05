@@ -3,23 +3,14 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { Show } from "@clerk/nextjs";
 import { Menu, X } from "lucide-react";
 
-import { AuthBadge } from "@/components/auth-badge";
 import { GithubIcon } from "@/components/github-icon";
 import { PetdexLogo } from "@/components/petdex-logo";
-import { SubmitCTA } from "@/components/submit-cta";
 
-type SiteHeaderProps = {
-  /** When true, hide the primary "Submit a pet" CTA (e.g. on /submit itself). */
-  hideSubmitCta?: boolean;
-};
-
-export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
+export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
-  // Close menu on Escape + lock body scroll while open.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -42,14 +33,9 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
           <Link href="/#gallery" className="transition hover:text-black">
             Gallery
           </Link>
-          <Link href="/create" className="transition hover:text-black">
-            Create
+          <Link href="/about" className="transition hover:text-black">
+            About
           </Link>
-          <Show when="signed-in">
-            <Link href="/my-pets" className="transition hover:text-black">
-              My pets
-            </Link>
-          </Show>
           <a href="/api/manifest" className="transition hover:text-black">
             Manifest
           </a>
@@ -65,12 +51,6 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
         </div>
 
         <div className="flex shrink-0 items-center gap-2">
-          {hideSubmitCta ? null : (
-            <SubmitCTA className="hidden h-10 items-center justify-center rounded-full bg-black px-4 text-sm font-medium text-white transition hover:bg-black/85 md:inline-flex">
-              Submit a pet
-            </SubmitCTA>
-          )}
-          <AuthBadge />
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -105,14 +85,9 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
             <MobileLink href="/#gallery" onClick={() => setOpen(false)}>
               Gallery
             </MobileLink>
-            <MobileLink href="/create" onClick={() => setOpen(false)}>
-              Create
+            <MobileLink href="/about" onClick={() => setOpen(false)}>
+              About
             </MobileLink>
-            <Show when="signed-in">
-              <MobileLink href="/my-pets" onClick={() => setOpen(false)}>
-                My pets
-              </MobileLink>
-            </Show>
             <MobileLink href="/api/manifest" onClick={() => setOpen(false)}>
               Manifest
             </MobileLink>
@@ -127,14 +102,6 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
               GitHub
             </a>
           </nav>
-
-          {!hideSubmitCta ? (
-            <div className="mt-auto p-5">
-              <SubmitCTA className="inline-flex h-12 w-full items-center justify-center rounded-full bg-black px-6 text-base font-medium text-white transition hover:bg-black/85">
-                Submit a pet
-              </SubmitCTA>
-            </div>
-          ) : null}
         </div>
       ) : null}
     </>
