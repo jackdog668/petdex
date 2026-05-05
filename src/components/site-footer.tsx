@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { SponsorButton } from "@/components/sponsor-button";
-
 export function SiteFooter() {
   return (
     <footer className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8">
@@ -18,14 +16,13 @@ export function SiteFooter() {
             Takedown
           </Link>
           <a
-            href="https://github.com/your-handle/homiedex"
+            href="https://github.com/jackdog668/homiedex"
             target="_blank"
             rel="noreferrer"
             className="underline underline-offset-4 transition hover:text-black"
           >
             GitHub
           </a>
-          <SponsorButton variant="inline" />
         </div>
       </div>
     </footer>

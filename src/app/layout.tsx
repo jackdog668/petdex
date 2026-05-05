@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 // TODO(brand): replace placeholder values once final brand info is set.
 const SITE_NAME = "Homiedex";
-const SITE_URL = "https://homiedex.example.com";
+const SITE_URL = "https://homiedex.vercel.app";
 const SITE_DESCRIPTION =
   "Homiedex is the Black & African American pop culture codex of pixel pets. Browse the legends — music, film, sports, comedy, civil rights, literature — as tiny animated companions.";
 
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Homiedex — Black & African American pop culture pixel pets",
     description: SITE_DESCRIPTION,
     images: ["/og-twitter.png"],
-    creator: "@yourhandle",
+    creator: "@db_alchemy",
   },
   robots: {
     index: true,

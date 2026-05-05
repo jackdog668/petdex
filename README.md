@@ -25,22 +25,13 @@ bun run build
 
 Homie packages live under `public/pets`, and downloadable archives are generated under `public/packs`. The roster of planned homies (with descriptions and tags) lives in `pets/ideas.json`.
 
-## Brand placeholders
-
-This fork hasn't been wired to its final brand info yet. Search for `your-handle`, `homiedex.example.com`, and `@yourhandle` to find the spots that need real values:
-
-- GitHub repo URL — header, footer, README
-- Site URL / domain — `src/app/layout.tsx`, `src/app/page.tsx`, `src/app/about/page.tsx`, `src/app/robots.ts`, `src/app/sitemap.ts`
-- Twitter / X handle — `src/app/layout.tsx`
-- Sponsor link — `src/components/sponsor-button.tsx`, `src/components/site-header.tsx`
-
 ## Generating homie sprites
 
-The site renders each homie as a 9-state pixel-art spritesheet, not a raw photo. To produce a sprite for a new homie:
+The site renders each homie as a 9-state pixel-art spritesheet (`spritesheet.webp`), not a raw photo. There's no built-in sprite generator in this repo yet — the loop right now is manual:
 
 1. Add the homie's metadata to `pets/ideas.json` (name, description, tags).
-2. Gather one or more reference photos of the homie (Google Image search is fine — these are source images for the generator, never shipped to the site).
-3. Feed the references into `scripts/generate-assets.ts` (uses OpenAI image generation) and review the output.
+2. Gather one or more reference photos of the homie (Google Image search is fine — these are source images for the generator, they never ship with the site).
+3. Use an external pixel-art generator (Codex CLI, ChatGPT image gen, Midjourney, etc.) with the references and a prompt for a 9-state chibi sprite strip on transparent background.
 4. Drop the resulting `pet.json` + `spritesheet.webp` under `public/pets/<id>/`.
 
 Final output is always a stylized pixel sprite — the reference photos stay on your machine.

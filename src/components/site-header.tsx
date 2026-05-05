@@ -9,7 +9,6 @@ import { Menu, X } from "lucide-react";
 import { AuthBadge } from "@/components/auth-badge";
 import { GithubIcon } from "@/components/github-icon";
 import { PetdexLogo } from "@/components/petdex-logo";
-import { SponsorButton } from "@/components/sponsor-button";
 import { SubmitCTA } from "@/components/submit-cta";
 
 type SiteHeaderProps = {
@@ -55,7 +54,7 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
             Manifest
           </a>
           <a
-            href="https://github.com/your-handle/homiedex"
+            href="https://github.com/jackdog668/homiedex"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 transition hover:text-black"
@@ -63,7 +62,6 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
             <GithubIcon className="size-4" />
             GitHub
           </a>
-          <SponsorButton variant="nav" />
         </div>
 
         <div className="flex shrink-0 items-center gap-2">
@@ -119,7 +117,7 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
               Manifest
             </MobileLink>
             <a
-              href="https://github.com/your-handle/homiedex"
+              href="https://github.com/jackdog668/homiedex"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-2 rounded-2xl px-4 py-3 transition hover:bg-white"
@@ -127,15 +125,6 @@ export function SiteHeader({ hideSubmitCta = false }: SiteHeaderProps) {
             >
               <GithubIcon className="size-5" />
               GitHub
-            </a>
-            <a
-              href="https://github.com/sponsors/your-handle"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-2xl px-4 py-3 text-rose-700 transition hover:bg-rose-50"
-              onClick={() => setOpen(false)}
-            >
-              ♥ Sponsor
             </a>
           </nav>
 

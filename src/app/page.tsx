@@ -20,7 +20,7 @@ import { TrackOnClick } from "@/components/track-on-click";
 
 export const dynamic = "force-dynamic";
 
-const SITE_URL = "https://homiedex.example.com";
+const SITE_URL = "https://homiedex.vercel.app";
 
 export default async function Home() {
   const [heroPets, totalPets, initialSearch] = await Promise.all([

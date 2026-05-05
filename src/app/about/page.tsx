@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { getApprovedPetCount } from "@/lib/pets";
 
-const SITE_URL = "https://homiedex.example.com";
+const SITE_URL = "https://homiedex.vercel.app";
 
 export const revalidate = 3600;
 
