@@ -8,11 +8,13 @@ const cspDirectives = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
-  "form-action 'self'",
+  // OAuth sign-in posts to provider authorize endpoints.
+  "form-action 'self' https://github.com https://accounts.google.com",
   "frame-ancestors 'none'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  // Avatar CDNs for GitHub + Google profile pictures.
+  "img-src 'self' data: blob: https://avatars.githubusercontent.com https://lh3.googleusercontent.com",
   "media-src 'self'",
   "font-src 'self' data:",
   "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com",

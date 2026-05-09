@@ -1,13 +1,11 @@
 import { notFound } from "next/navigation";
 
-import { JsonLd } from "@/components/json-ld";
-import { FacetPage } from "@/components/facet-page";
 import { KIND_COPY } from "@/lib/facet-copy";
-import {
-  type PetWithMetrics,
-  getApprovedPetsWithMetrics,
-} from "@/lib/pets";
+import { getApprovedPetsWithMetrics, type PetWithMetrics } from "@/lib/pets";
 import { PET_KINDS, type PetKind } from "@/lib/types";
+
+import { FacetPage } from "@/components/facet-page";
+import { JsonLd } from "@/components/json-ld";
 
 const SITE_URL = "https://homiedex.vercel.app";
 

@@ -13,7 +13,7 @@
 //     "featured": true                           // optional
 //   }
 
-import { readFile, readdir, stat } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 import { cache } from "react";
@@ -22,9 +22,9 @@ import {
   PET_KINDS,
   PET_VIBES,
   type PetCredit,
+  type PetdexPet,
   type PetKind,
   type PetVibe,
-  type PetdexPet,
 } from "@/lib/types";
 
 export type Metrics = {

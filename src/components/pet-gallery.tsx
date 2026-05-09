@@ -12,18 +12,13 @@ import {
   X,
 } from "lucide-react";
 
-import type { PetWithMetrics } from "@/lib/pets";
 import { petStates } from "@/lib/pet-states";
-import {
-  PET_KINDS,
-  PET_VIBES,
-  type PetKind,
-  type PetVibe,
-} from "@/lib/types";
+import type { PetWithMetrics } from "@/lib/pets";
+import { PET_KINDS, PET_VIBES, type PetKind, type PetVibe } from "@/lib/types";
+import { isAllowedAvatarUrl } from "@/lib/url-allowlist";
 
 import { PetActionMenu } from "@/components/pet-action-menu";
 import { PetSprite } from "@/components/pet-sprite";
-import { isAllowedAvatarUrl } from "@/lib/url-allowlist";
 
 type Facets = {
   kinds: Record<string, number>;
@@ -76,10 +71,8 @@ export function PetGallery({ initial, totalPets }: PetGalleryProps) {
       const p = new URLSearchParams();
       const trimmed = query.trim();
       if (trimmed) p.set("q", trimmed);
-      if (activeKinds.size > 0)
-        p.set("kinds", [...activeKinds].join(","));
-      if (activeVibes.size > 0)
-        p.set("vibes", [...activeVibes].join(","));
+      if (activeKinds.size > 0) p.set("kinds", [...activeKinds].join(","));
+      if (activeVibes.size > 0) p.set("vibes", [...activeVibes].join(","));
       if (sort !== "curated") p.set("sort", sort);
       if (cursor > 0) p.set("cursor", String(cursor));
       p.set("limit", String(PAGE_SIZE));

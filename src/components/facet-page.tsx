@@ -6,8 +6,8 @@ import Link from "next/link";
 
 import { Heart, TerminalSquare } from "lucide-react";
 
-import type { PetWithMetrics } from "@/lib/pets";
 import { petStates } from "@/lib/pet-states";
+import type { PetWithMetrics } from "@/lib/pets";
 
 import { PetActionMenu } from "@/components/pet-action-menu";
 import { PetSprite } from "@/components/pet-sprite";
@@ -60,7 +60,12 @@ export function FacetPage({
       <section className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 px-5 py-12 md:px-8 md:py-16">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 md:gap-5">
           {pets.map((pet, index) => (
-            <PetCard key={pet.slug} pet={pet} index={index} stateCount={stateCount} />
+            <PetCard
+              key={pet.slug}
+              pet={pet}
+              index={index}
+              stateCount={stateCount}
+            />
           ))}
         </div>
 

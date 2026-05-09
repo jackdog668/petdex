@@ -1,129 +1,96 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
-import { Menu, X } from "lucide-react";
+import { signOutAction } from "@/lib/auth-actions";
+import { getCurrentUser } from "@/lib/dal";
 
-import { GithubIcon } from "@/components/github-icon";
-import { PetdexLogo } from "@/components/petdex-logo";
+import { SiteHeaderMenu } from "@/components/site-header-menu";
 
-export function SiteHeader() {
-  const [open, setOpen] = useState(false);
+export async function SiteHeader() {
+  const user = await getCurrentUser();
 
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [open]);
-
-  return (
-    <>
-      <nav className="flex items-center justify-between gap-3">
-        <PetdexLogo href="/" />
-
-        <div className="hidden items-center gap-9 text-sm text-[#4f515c] md:flex">
-          <Link href="/#gallery" className="transition hover:text-black">
-            Gallery
-          </Link>
-          <Link href="/about" className="transition hover:text-black">
-            About
-          </Link>
-          <a href="/api/manifest" className="transition hover:text-black">
-            Manifest
-          </a>
-          <a
-            href="https://github.com/jackdog668/homiedex"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 transition hover:text-black"
-          >
-            <GithubIcon className="size-4" />
-            GitHub
-          </a>
-        </div>
-
-        <div className="flex shrink-0 items-center gap-2">
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="grid size-10 place-items-center rounded-full border border-black/10 bg-white/70 text-stone-700 transition hover:bg-white md:hidden"
-          >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
-          </button>
-        </div>
-      </nav>
-
-      {open ? (
-        <div
-          className="fixed inset-0 z-40 flex flex-col bg-[#f7f8ff]/95 backdrop-blur md:hidden"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(false);
-          }}
-        >
-          <div className="flex items-center justify-between gap-3 px-5 pt-5 pb-3">
-            <PetdexLogo href="/" />
-            <button
-              type="button"
-              aria-label="Close menu"
-              onClick={() => setOpen(false)}
-              className="grid size-10 place-items-center rounded-full border border-black/10 bg-white text-stone-700 transition hover:bg-stone-100"
-            >
-              <X className="size-4" />
-            </button>
-          </div>
-          <nav className="mt-4 flex flex-col gap-1 px-5 text-lg">
-            <MobileLink href="/#gallery" onClick={() => setOpen(false)}>
-              Gallery
-            </MobileLink>
-            <MobileLink href="/about" onClick={() => setOpen(false)}>
-              About
-            </MobileLink>
-            <MobileLink href="/api/manifest" onClick={() => setOpen(false)}>
-              Manifest
-            </MobileLink>
-            <a
-              href="https://github.com/jackdog668/homiedex"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-2 rounded-2xl px-4 py-3 transition hover:bg-white"
-              onClick={() => setOpen(false)}
-            >
-              <GithubIcon className="size-5" />
-              GitHub
-            </a>
-          </nav>
-        </div>
-      ) : null}
-    </>
-  );
-}
-
-function MobileLink({
-  href,
-  children,
-  onClick,
-}: {
-  href: string;
-  children: React.ReactNode;
-  onClick: () => void;
-}) {
-  return (
+  const userSlot = user ? (
+    <UserChip user={user} />
+  ) : (
     <Link
-      href={href}
-      onClick={onClick}
+      href="/sign-in"
+      className="rounded-full border border-black/10 bg-white/80 px-3.5 py-1.5 text-sm font-medium text-stone-900 transition hover:bg-white"
+    >
+      Sign in
+    </Link>
+  );
+
+  const mobileUserSlot = user ? (
+    <div className="flex flex-col gap-1">
+      <Link
+        href={user.handle ? `/u/${user.handle}` : "/settings/profile"}
+        className="rounded-2xl px-4 py-3 text-stone-800 transition hover:bg-white"
+      >
+        {user.handle ? `@${user.handle}` : "Set up your profile"}
+      </Link>
+      <Link
+        href="/settings/profile"
+        className="rounded-2xl px-4 py-3 text-stone-800 transition hover:bg-white"
+      >
+        Settings
+      </Link>
+      <form action={signOutAction}>
+        <button
+          type="submit"
+          className="w-full rounded-2xl px-4 py-3 text-left text-stone-800 transition hover:bg-white"
+        >
+          Sign out
+        </button>
+      </form>
+    </div>
+  ) : (
+    <Link
+      href="/sign-in"
       className="rounded-2xl px-4 py-3 text-stone-800 transition hover:bg-white"
     >
-      {children}
+      Sign in
     </Link>
+  );
+
+  return <SiteHeaderMenu userSlot={userSlot} mobileUserSlot={mobileUserSlot} />;
+}
+
+function UserChip({
+  user,
+}: {
+  user: { name: string | null; image: string | null; handle: string | null };
+}) {
+  const display = user.handle ? `@${user.handle}` : (user.name ?? "Profile");
+  const href = user.handle ? `/u/${user.handle}` : "/settings/profile";
+  return (
+    <div className="flex items-center gap-1">
+      <Link
+        href={href}
+        className="flex items-center gap-2 rounded-full border border-black/10 bg-white/80 py-1 pr-3 pl-1 text-sm font-medium text-stone-900 transition hover:bg-white"
+      >
+        {user.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={user.image}
+            alt=""
+            className="size-7 rounded-full object-cover"
+            referrerPolicy="no-referrer"
+          />
+        ) : (
+          <span className="grid size-7 place-items-center rounded-full bg-stone-200 text-xs font-semibold text-stone-700">
+            {(user.name ?? "?").slice(0, 1).toUpperCase()}
+          </span>
+        )}
+        <span>{display}</span>
+      </Link>
+      <form action={signOutAction}>
+        <button
+          type="submit"
+          className="rounded-full border border-transparent px-2 py-1 text-xs text-stone-500 transition hover:text-stone-900"
+          aria-label="Sign out"
+        >
+          Sign out
+        </button>
+      </form>
+    </div>
   );
 }

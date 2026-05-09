@@ -36,7 +36,8 @@ export function InstallCommand({ slug, displayName }: InstallCommandProps) {
   return (
     <div className="rounded-2xl border border-black/10 bg-white/76 p-5 shadow-sm shadow-blue-950/5 backdrop-blur">
       <div className="flex items-center gap-2 text-sm font-semibold text-stone-950">
-        <Download className="size-4" />1. Download the pack
+        <Download className="size-4" />
+        1. Download the pack
       </div>
       <p className="mt-2 text-xs leading-5 text-stone-500">
         Two files. Save them next to each other in a folder named{" "}
@@ -63,7 +64,8 @@ export function InstallCommand({ slug, displayName }: InstallCommandProps) {
 
       <div className="mt-5 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 text-sm font-semibold text-stone-950">
-          <Terminal className="size-4" />2. Drop into Codex
+          <Terminal className="size-4" />
+          2. Drop into Codex
         </div>
         <PlatformToggle platform={platform} onChange={setPlatform} />
       </div>
@@ -75,7 +77,8 @@ export function InstallCommand({ slug, displayName }: InstallCommandProps) {
       </p>
 
       <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-stone-950">
-        <MousePointerClick className="size-4" />3. Activate in Codex
+        <MousePointerClick className="size-4" />
+        3. Activate in Codex
       </div>
       <ol className="mt-2 space-y-1 text-xs leading-5 text-stone-600">
         <li>

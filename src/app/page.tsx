@@ -2,9 +2,9 @@ import Link from "next/link";
 
 import { searchPets } from "@/lib/pet-search";
 import {
-  type PetWithMetrics,
   getApprovedPetCount,
   getFeaturedPetsWithMetrics,
+  type PetWithMetrics,
 } from "@/lib/pets";
 
 import { JsonLd } from "@/components/json-ld";
@@ -77,8 +77,8 @@ export default async function Home() {
             <p className="mt-5 max-w-xl text-balance text-base leading-7 text-[#202127] md:text-lg">
               The codex of <strong>Black & African American pop culture</strong>{" "}
               as tiny animated pixel pets. {totalPets}+ legends from music,
-              film, sports, comedy, and history — drop one in your terminal
-              and ship code with the GOATs.
+              film, sports, comedy, and history — drop one in your terminal and
+              ship code with the GOATs.
             </p>
           </div>
 

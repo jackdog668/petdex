@@ -1,9 +1,10 @@
 import Link from "next/link";
 
+import { getApprovedPetCount } from "@/lib/pets";
+
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { getApprovedPetCount } from "@/lib/pets";
 
 const SITE_URL = "https://homiedex.vercel.app";
 
@@ -96,8 +97,8 @@ export default async function AboutPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-balance text-base leading-7 text-[#202127] md:text-lg">
               {totalPets}+ Black & African American pop culture legends as tiny
-              animated pixel pets. Drop one in your terminal and ship code
-              with the GOATs.
+              animated pixel pets. Drop one in your terminal and ship code with
+              the GOATs.
             </p>
           </div>
         </div>
@@ -111,8 +112,8 @@ export default async function AboutPage() {
           <p className="text-base leading-7 text-stone-700 md:text-lg">
             Homiedex is a public, open-source codex. Every entry is a homie pack
             — a tiny bundle of metadata and pixel art celebrating a Black or
-            African American pop culture icon. Think of it as a Pokédex, but
-            for the GOATs.
+            African American pop culture icon. Think of it as a Pokédex, but for
+            the GOATs.
           </p>
           <p className="text-base leading-7 text-stone-700 md:text-lg">
             The catalog spans music, film, sports, comedy, civil rights, and
@@ -139,10 +140,15 @@ export default async function AboutPage() {
             How a homie pack works
           </h2>
           <p className="text-base leading-7 text-stone-700 md:text-lg">
-            Each homie is two files. <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">pet.json</code>{" "}
+            Each homie is two files.{" "}
+            <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">
+              pet.json
+            </code>{" "}
             defines the metadata — name, the 9 animation states, frame durations
             — and{" "}
-            <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">spritesheet.webp</code>{" "}
+            <code className="rounded bg-[#eef1ff] px-1 py-0.5 text-[#5266ea]">
+              spritesheet.webp
+            </code>{" "}
             holds the pixel art as a horizontal strip. Codex loads them at
             startup and swaps states based on what's happening in your session.
           </p>

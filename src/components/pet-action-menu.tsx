@@ -4,11 +4,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import {
   Check,
+  X as CloseIcon,
   Copy,
   ExternalLink,
   Link2,
   MoreHorizontal,
-  X as CloseIcon,
 } from "lucide-react";
 
 const SITE_URL = "https://homiedex.vercel.app";

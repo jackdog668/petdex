@@ -4,7 +4,10 @@ Homiedex is the codex of Black & African American pop culture as tiny animated p
 
 ## How it works
 
-The site reads pets directly from the filesystem. No database, no auth, no storage service. Each homie is a folder under `public/pets/`:
+Homies are still file-driven (drop a folder under `public/pets/`, push, ship).
+The community layer — sign-in, profiles, comments, favorites — lives in a
+Neon Postgres database accessed via Drizzle ORM, with Auth.js handling
+GitHub / Google sign-in.
 
 ```
 public/pets/biggie/
@@ -62,6 +65,8 @@ The full curated list of planned homies (with descriptions and tags) lives in `p
 
 ```bash
 bun install
+cp .env.example .env.local   # fill in AUTH_SECRET, OAuth + DATABASE_URL
+bun db:push                  # apply schema to your Neon DB
 bun dev
 ```
 
@@ -70,6 +75,24 @@ bun dev
 ```bash
 bun run build
 ```
+
+## Community schema
+
+The Postgres schema (`src/lib/db/schema.ts`) defines:
+
+- `user`, `account`, `session`, `verificationToken` — Auth.js core tables
+- `comment` — forum-style posts on pet pages, soft-deleted
+- `favorite` — user → pet favorites, used on profiles
+
+Run `bun db:generate` after schema edits to produce a SQL migration in
+`drizzle/`, then `bun db:push` to apply.
+
+### Required env vars
+
+- `AUTH_SECRET` — `openssl rand -base64 32`
+- `AUTH_GITHUB_ID` / `AUTH_GITHUB_SECRET`
+- `AUTH_GOOGLE_ID` / `AUTH_GOOGLE_SECRET`
+- `DATABASE_URL` — Neon Postgres connection string
 
 ## Generating homie sprites
 

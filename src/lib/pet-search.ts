@@ -1,9 +1,6 @@
 // In-memory search over the filesystem-loaded pet list. No DB.
 
-import {
-  type PetWithMetrics,
-  getApprovedPetsWithMetrics,
-} from "@/lib/pets";
+import { getApprovedPetsWithMetrics, type PetWithMetrics } from "@/lib/pets";
 import { PET_KINDS, PET_VIBES, type PetKind, type PetVibe } from "@/lib/types";
 
 export type SortKey = "curated" | "popular" | "installed" | "alpha";
@@ -49,8 +46,8 @@ export async function searchPets(input: SearchInput): Promise<SearchOutput> {
     if (kinds && !kinds.includes(p.kind)) return false;
     if (vibes && !p.vibes.some((v) => vibes.includes(v))) return false;
     if (q) {
-      const hay = `${p.displayName}\n${p.description}\n${p.tags.join(" ")}`
-        .toLowerCase();
+      const hay =
+        `${p.displayName}\n${p.description}\n${p.tags.join(" ")}`.toLowerCase();
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -81,12 +78,12 @@ function sortCmp(a: PetWithMetrics, b: PetWithMetrics, key: SortKey): number {
   switch (key) {
     case "popular":
       return (
-        (b.metrics.likeCount - a.metrics.likeCount) ||
+        b.metrics.likeCount - a.metrics.likeCount ||
         a.displayName.localeCompare(b.displayName)
       );
     case "installed":
       return (
-        (b.metrics.installCount - a.metrics.installCount) ||
+        b.metrics.installCount - a.metrics.installCount ||
         a.displayName.localeCompare(b.displayName)
       );
     case "alpha":
@@ -94,7 +91,7 @@ function sortCmp(a: PetWithMetrics, b: PetWithMetrics, key: SortKey): number {
     case "curated":
     default:
       return (
-        (Number(b.featured ?? false) - Number(a.featured ?? false)) ||
+        Number(b.featured ?? false) - Number(a.featured ?? false) ||
         a.displayName.localeCompare(b.displayName)
       );
   }

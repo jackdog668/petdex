@@ -2,10 +2,11 @@ import Link from "next/link";
 
 import { Search, Sparkles } from "lucide-react";
 
+import { getApprovedPetCount, getFeaturedPetsWithMetrics } from "@/lib/pets";
+
 import { PetSprite } from "@/components/pet-sprite";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { getApprovedPetCount, getFeaturedPetsWithMetrics } from "@/lib/pets";
 
 export const dynamic = "force-dynamic";
 
@@ -23,8 +24,7 @@ export default async function NotFound() {
 
   // Pick a random featured pet for the "lost" sprite. Falls back gracefully
   // if the curated set is empty (early days / fresh DB).
-  const lost =
-    featured[Math.floor(Math.random() * featured.length)] ?? null;
+  const lost = featured[Math.floor(Math.random() * featured.length)] ?? null;
 
   return (
     <main className="min-h-screen bg-[#f7f8ff] text-[#050505]">
@@ -129,7 +129,6 @@ export default async function NotFound() {
               </Link>
             ))}
           </div>
-
         </section>
       ) : null}
 

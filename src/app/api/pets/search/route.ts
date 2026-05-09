@@ -1,10 +1,6 @@
 import { NextResponse } from "next/server";
 
-import {
-  SEARCH_LIMITS,
-  type SortKey,
-  searchPets,
-} from "@/lib/pet-search";
+import { SEARCH_LIMITS, type SortKey, searchPets } from "@/lib/pet-search";
 import { PET_KINDS, PET_VIBES, type PetKind, type PetVibe } from "@/lib/types";
 
 export const runtime = "nodejs";
@@ -12,12 +8,7 @@ export const dynamic = "force-dynamic";
 
 const KIND_SET = new Set<string>(PET_KINDS);
 const VIBE_SET = new Set<string>(PET_VIBES);
-const SORT_SET = new Set<SortKey>([
-  "curated",
-  "popular",
-  "installed",
-  "alpha",
-]);
+const SORT_SET = new Set<SortKey>(["curated", "popular", "installed", "alpha"]);
 
 export async function GET(req: Request): Promise<Response> {
   const url = new URL(req.url);
@@ -25,10 +16,12 @@ export async function GET(req: Request): Promise<Response> {
 
   const q = params.get("q") ?? undefined;
 
-  const kinds = parseList(params.get("kinds"))
-    .filter((k) => KIND_SET.has(k)) as PetKind[];
-  const vibes = parseList(params.get("vibes"))
-    .filter((v) => VIBE_SET.has(v)) as PetVibe[];
+  const kinds = parseList(params.get("kinds")).filter((k) =>
+    KIND_SET.has(k),
+  ) as PetKind[];
+  const vibes = parseList(params.get("vibes")).filter((v) =>
+    VIBE_SET.has(v),
+  ) as PetVibe[];
 
   const sortRaw = (params.get("sort") ?? "curated").toLowerCase();
   const sort: SortKey = SORT_SET.has(sortRaw as SortKey)
@@ -36,10 +29,7 @@ export async function GET(req: Request): Promise<Response> {
     : "curated";
 
   const cursor = parseIntSafe(params.get("cursor"), 0);
-  const limit = parseIntSafe(
-    params.get("limit"),
-    SEARCH_LIMITS.DEFAULT_LIMIT,
-  );
+  const limit = parseIntSafe(params.get("limit"), SEARCH_LIMITS.DEFAULT_LIMIT);
 
   const result = await searchPets({ q, kinds, vibes, sort, cursor, limit });
 

@@ -4,9 +4,11 @@ import { FileJson, Sparkles } from "lucide-react";
 
 import { getPet, getStaticPetSlugs } from "@/lib/pets";
 
+import { FavoriteButton } from "@/components/favorite-button";
 import { InstallCommand } from "@/components/install-command";
 import { JsonLd } from "@/components/json-ld";
 import { PetActionMenu } from "@/components/pet-action-menu";
+import { PetComments } from "@/components/pet-comments";
 import { PetStateViewer } from "@/components/pet-state-viewer";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -157,6 +159,7 @@ export default async function PetPage({ params }: PageProps) {
                 }}
                 variant="detail"
               />
+              <FavoriteButton petSlug={pet.slug} />
             </div>
             {pet.tags.length > 0 ? (
               <div className="mt-6 flex flex-wrap gap-2">
@@ -199,6 +202,8 @@ export default async function PetPage({ params }: PageProps) {
             </p>
           </InfoCard>
         </section>
+
+        <PetComments petSlug={pet.slug} petName={pet.displayName} />
       </section>
       <SiteFooter />
     </main>
